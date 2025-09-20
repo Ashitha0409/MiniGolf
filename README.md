@@ -158,7 +158,7 @@ npm run preview
 
 Built by [TheClazer](https://github.com/TheClazer),  
 [Ashitha0409](https://github.com/Ashitha0409),  
-[has066](https://github.com/has066),  
+[has066](https://github.com/hash066),  
 [ayushranjan28](https://github.com/ayushranjan28)  
 for CloneFest 2025.
 
