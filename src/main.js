@@ -96,6 +96,10 @@ let strokes = 0;
 const strokesCounter = document.getElementById('strokes-counter');
 const levelDisplay = document.getElementById('level-display');
 
+// Countdown elements
+const countdownOverlay = document.getElementById('countdown-overlay');
+const countdownNumber = document.getElementById('countdown-number');
+
 // Control buttons
 const musicControl = document.querySelector('.music-control');
 const resetBallBtn = document.querySelector('.reset-ball');
@@ -108,6 +112,27 @@ const helpBtn = document.querySelector('.help');
 function updateGameStateDisplays() {
     strokesCounter.textContent = `Strokes: ${strokes}`;
     levelDisplay.textContent = `Level: ${currentLevelIndex + 1}`;
+}
+
+// Countdown function
+function startCountdown(callback) {
+    let count = 3;
+    countdownOverlay.style.display = 'flex';
+    countdownNumber.textContent = count;
+    
+    const countdownInterval = setInterval(() => {
+        count--;
+        if (count > 0) {
+            countdownNumber.textContent = count;
+        } else {
+            countdownNumber.textContent = 'GO!';
+            clearInterval(countdownInterval);
+            setTimeout(() => {
+                countdownOverlay.style.display = 'none';
+                if (callback) callback();
+            }, 500);
+        }
+    }, 1000);
 }
 
 // Music control
@@ -128,6 +153,10 @@ resetBallBtn.addEventListener('click', () => {
     onLose();
     strokes++;
     updateGameStateDisplays();
+    // Show countdown after reset
+    startCountdown(() => {
+        console.log('Ball reset - ready to play!');
+    });
 });
 
 // Reset camera button
@@ -303,6 +332,11 @@ function loadLevel(index, restart = false) {
 
     if (holeEnd) console.log('holeEnd surface at', holeEnd.toArray());
     else console.log('no holeEnd found in this level');
+    
+    // Start countdown before level begins
+    startCountdown(() => {
+        console.log('Level started!');
+    });
   }, undefined, e => {
     console.error('GLTF load error', e);
   });
