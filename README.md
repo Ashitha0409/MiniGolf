@@ -51,6 +51,69 @@ This project can also be adapted as a **fun offline/loading screen game** 🔄
   - Lose condition: falling out of bounds resets ball to start.
 
 ---
+## 📌 Additional Future Enhancements
+
+### 1. Music System
+- *Music Toggle Button*: A circular music control button in the bottom-right corner that lets you:
+  - Play/pause background music
+  - Mute/unmute the audio
+  - Shows a speaker icon (🔊) when music is playing
+  - Changes to a muted speaker (🔇) when music is off
+  - Has a smooth hover effect with a color change
+
+### 2. Control Panel (Left Side)
+A vertical panel on the left side with these interactive buttons:
+
+1. *Reset Ball (🔄)*
+   - Resets the ball to its starting position
+   - Has an orange background
+   - Has a smooth scale animation when clicked
+
+2. *Reset Camera (📹)*
+   - Resets the camera to its default position
+   - Has a blue background
+   - Also has a click animation
+
+3. *Level Select (🎯)*
+   - Opens a prompt to choose a level
+   - Shows available levels (e.g., "Choose your challenge! Level 1-2")
+   - Has a purple background
+   - Includes input validation
+
+4. *Fullscreen Toggle (⛶)*
+   - Toggles between fullscreen and windowed mode
+   - Has a green background
+   - Works with the browser's fullscreen API
+
+5. *Help (❓)*
+   - Displays game controls and instructions
+   - Has a red background
+   - Shows a popup with game information
+
+### 3. HDRI Background System
+- *Dynamic Background*: 
+  - Loads high-dynamic-range images for realistic lighting
+  - Affects both the skybox and environment reflections
+  - Has a fallback to original lighting if loading fails
+  - Includes loading progress tracking
+  - Currently disabled but can be re-enabled
+
+### 4. Visual Feedback
+- *Button Effects*:
+  - Scale animation on hover (buttons grow slightly larger)
+  - Click animation (buttons press down)
+  - Smooth transitions for all animations
+  - Shadow effects for depth
+
+### 5. Game State Display
+- *Strokes Counter* (Top-left)
+  - Shows the current number of strokes
+  - Updates in real-time
+  - Has a semi-transparent black background
+
+- *Level Display* (Top-right)
+  - Shows the current level number
+  - Matches the style of the strokes counter
 
 ## 📂 Project Structure
 
@@ -141,7 +204,6 @@ npm run preview
 
   🏆 Leaderboard & scoring system
 
-  🎨 More levels with ramps & moving obstacles
 ---
 
 ## 🛠 Tech Stack
